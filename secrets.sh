@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 /home/wxu/.gemini/antigravity/playground/crystal-pioneer/keystore.py "$@"
+python3 "$(dirname "$0")/keystore.py" "$@"
