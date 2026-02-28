@@ -1,4 +1,8 @@
 .keystore.key
 .keystore.data
-keystore.py
-secrets.sh
+.keystore.salt
+.keystore.pass
+.keystore.env
+*.tmp
+__pycache__/
+run_tests.py
