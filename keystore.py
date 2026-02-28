@@ -9,10 +9,12 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.backends import default_backend
 
-DATA_FILE = os.getenv("KEYSTORE_DATA_FILE", ".keystore.data")
-SALT_FILE = os.getenv("KEYSTORE_SALT_FILE", ".keystore.salt")
+# Absolute path to the keystore directory (this file's directory)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_FILE = os.path.join(BASE_DIR, ".keystore.data")
+SALT_FILE = os.path.join(BASE_DIR, ".keystore.salt")
+KEYSTORE_ENV_FILE = os.path.join(BASE_DIR, ".keystore.env")
 ITERATIONS = 2_000_000
-KEYSTORE_ENV_FILE = ".keystore.env"
 
 def derive_key(password, salt):
     """Derives a 256-bit key from the password and salt using PBKDF2-HMAC-SHA512."""
