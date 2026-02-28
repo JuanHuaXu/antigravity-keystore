@@ -1,8 +1,10 @@
-.keystore.key
-.keystore.data
-.keystore.salt
-.keystore.pass
-.keystore.env
+.keystore.*
 *.tmp
 __pycache__/
 run_tests.py
+id_ed25519*
+id_rsa*
+id_*_worker*
+id_*_antigravity*
+*.key
+push_to_github.sh
